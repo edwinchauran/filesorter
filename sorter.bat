@@ -40,6 +40,10 @@ ECHO NO importa si el nombre carpeta lleva espacios.
 echo =======================
 echo.
 
+	::PREMIERE
+IF EXIST *.prproj (MKDIR premiere)
+	for /R %%x in (*.prproj) do move "%%x" premiere
+
 	::IMAGENES
 IF EXIST *.jpg (MKDIR imagenes)
 	for /R %%x in (*.png) do move "%%x" imagenes
@@ -58,6 +62,9 @@ IF EXIST *.bmp (MKDIR imagenes)
 
 IF EXIST *.ico (MKDIR imagenes)
 	for /R %%x in (*.ico) do move "%%x" imagenes
+
+IF EXIST *.jpeg (MKDIR imagenes)
+	for /R %%x in (*.jpeg) do move "%%x" imagenes
 
 
 	::VIDEOS
@@ -95,6 +102,9 @@ IF EXIST *.ogg (MKDIR musica)
 
 IF EXIST *.acc (MKDIR musica)
 	for /R %%x in (*.acc) do move "%%x" musica
+
+IF EXIST *.flac (MKDIR musica)
+	for /R %%x in (*.flac) do move "%%x" musica
 
 	
 	::TEXTO
